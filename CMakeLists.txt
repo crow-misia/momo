@@ -262,7 +262,7 @@ project(momo C CXX)
 
 list(APPEND MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_STATIC_LIBS OFF)
 if ("${TARGET_OS}" STREQUAL "windows")
   set(Boost_USE_STATIC_RUNTIME ON)
 else()
