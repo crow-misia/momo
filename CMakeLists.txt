@@ -521,21 +521,25 @@ elseif (TARGET_OS STREQUAL "linux")
     target_compile_definitions(momo PRIVATE _LIBCPP_ABI_UNSTABLE)
   endif()
 
+  if (USE_SDL2)
+    target_link_libraries(momo
+      PRIVATE
+        X11
+        Xau
+        Xdmcp
+        Xcb
+        plds4
+        Xext
+        plc4
+        nspr4
+    )
+  endif()
+
   set_target_properties(momo PROPERTIES POSITION_INDEPENDENT_CODE ON)
   target_link_libraries(momo
     PRIVATE
-      X11
-      Xau
-      Xdmcp
-      xcb
-      plds4
-      Xext
       expat
       dl
-      nss3
-      nssutil3
-      plc4
-      nspr4
       rt
       Threads::Threads
   )
