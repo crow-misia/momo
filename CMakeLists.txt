@@ -625,7 +625,7 @@ elseif (TARGET_OS STREQUAL "linux")
       if (TARGET_ARCH_ARM STREQUAL "armv6")
         target_compile_options(momo PRIVATE -mfloat-abi=hard -mcpu=arm1176jzf-s -mfpu=vfp)
       else()
-        target_compile_options(momo PRIVATE -mfloat-abi=hard -march=armv7-a -mtune=generic-armv7-a -mfpu=neon -mthumb)
+        target_compile_options(momo PRIVATE -mfloat-abi=hard -march=armv7-a -mtune=generic-armv7-a -mfpu=neon)
       endif()
 
       if (USE_MMAL_ENCODER)
